@@ -1,9 +1,60 @@
-import React from 'react'
+import ChatHeader from "./ChatHeader";
+import { useChatStore } from '../stores/useChatStore';
+import MessageSkeleton from "./skeletons/MessageSkeleton";
+import MessageInput from "./MessageInput";
+import { useEffect, useRef } from "react";
+import { useAuthStore } from "../stores/useAuthStore";
+import { formatMessageTime } from "../lib/utils";
 
 const ChatContainer = () => {
+  const { messages, getMessages, isMessagesLoading, selectedUser } = useChatStore();
+  const { authUser } = useAuthStore();
+
+  useEffect(()=>{
+    getMessages(selectedUser._id);
+  },[selectedUser._id,getMessages]);
+
+  const messageEndRef = useRef();
+
+  if(isMessagesLoading){
+    return(
+      <div>
+        <ChatHeader/>
+        <MessageSkeleton/>
+        <MessageInput/>
+      </div>
+    )
+  }
   return (
-    <div>ChatContainer</div>
-  )
+    <div>
+      <ChatHeader />
+      {/*Showing messages*/}
+      <div>
+        {messages.map((message) => (
+          <div
+            key={message._id}
+            ref={messageEndRef}
+            className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
+          >
+            <img src={message.senderId===authUser._id?authUser.profilePic || "/avatar.png" : selectedUser.profilePic || "/avatar.png"} />
+            <time>
+              {formatMessageTime(message.createdAt)}
+            </time>
+            <div>
+              {message.image && (
+                <img
+                  src={message.image}
+                  alt="Attachment"
+                />
+              )}
+              {message.text && <p>{message.text}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+      <MessageInput/>
+    </div>
+  );
 }
 
 export default ChatContainer

@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4bfcdd716ce3ea/icons/React-Dark.svg" alt="React" width="80" height="80" />
-  
   <h1 align="center">✨ Prism Chat ✨</h1>
 
   <p align="center">

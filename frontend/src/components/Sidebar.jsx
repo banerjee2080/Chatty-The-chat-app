@@ -34,7 +34,7 @@ const Sidebar = () => {
         </label>
       </div>
 
-      <div className="overflow-y-auto w-full py-3 px-2 flex flex-col gap-2">
+      <div className="overflow-y-auto w-full py-3 px-2 flex flex-col gap-2 flex-1">
         {filteredUsers.map((user) => (
           <button
             key={user._id}

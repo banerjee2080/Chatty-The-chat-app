@@ -57,7 +57,7 @@ function App() {
     );
   }
   return (
-    <div className="min-h-screen bg-base-200 text-base-content overflow-hidden flex flex-col">
+    <div className="h-screen bg-base-200 text-base-content overflow-hidden flex flex-col">
       <Navbar />
       <Routes>
         <Route

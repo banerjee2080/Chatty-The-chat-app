@@ -22,7 +22,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center p-4">
       {/* Glassmorphic Container */}
-      <div className="w-full max-w-md glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
+      <div className="w-full max-w-md glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl shadow-base-content/5">
         {/* Subtle background glow effect */}
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
@@ -51,7 +51,7 @@ const LoginPage = () => {
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="input w-full pl-12 rounded-2xl bg-base-100/50 border-base-content/10 focus:bg-base-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="input w-full pl-12 rounded-full bg-base-100/50 border-base-content/10 focus:bg-base-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -74,7 +74,7 @@ const LoginPage = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
-                  className="input w-full pl-12 pr-12 rounded-2xl bg-base-100/50 border-base-content/10 focus:bg-base-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="input w-full pl-12 pr-12 rounded-full bg-base-100/50 border-base-content/10 focus:bg-base-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                   value={formData.password}
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
@@ -97,7 +97,7 @@ const LoginPage = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-full rounded-2xl mt-8 shadow-lg hover:shadow-primary/30 transition-all duration-300 transform active:scale-[0.98]"
+              className="btn btn-primary w-full rounded-full mt-8 shadow-lg shadow-base-content/10 hover:shadow-primary/30 transition-all duration-300 transform active:scale-[0.98]"
               disabled={isLoggingIn}
             >
               {isLoggingIn ? (

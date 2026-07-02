@@ -85,7 +85,7 @@ const MessageInput = () => {
             <img
               src={imagePreview}
               alt="preview"
-              className="h-20 w-20 object-cover rounded-xl border border-base-content/20 shadow-sm"
+              className="h-20 w-20 object-cover rounded-3xl border border-base-content/20 shadow-sm shadow-base-content/10"
             />
             <button
               type="button"
@@ -101,7 +101,7 @@ const MessageInput = () => {
         onSubmit={handleSendMessage}
         className="flex items-center gap-2 max-w-4xl mx-auto"
       >
-        <div className="flex-1 flex items-center bg-base-100/50 backdrop-blur-md rounded-full border border-base-content/10 shadow-inner px-4 py-2 transition-colors focus-within:bg-base-100/70 focus-within:border-base-content/20">
+        <div className="flex-1 flex items-center bg-base-100/50 backdrop-blur-md rounded-full border border-base-content/10 shadow-inner shadow-base-content/5 px-4 py-2 transition-colors focus-within:bg-base-100/70 focus-within:border-base-content/20">
           <input
             type="text"
             placeholder="iMessage..."
@@ -127,7 +127,7 @@ const MessageInput = () => {
         <button
           type="submit"
           disabled={(!text.trim() && !imagePreview) || isMessageSending}
-          className="btn btn-circle btn-primary btn-sm ml-1 shadow-md"
+          className="btn btn-circle btn-primary btn-sm ml-1 shadow-md shadow-base-content/10"
         >
           <Send className="size-4" />
         </button>

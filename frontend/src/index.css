@@ -53,11 +53,11 @@
 
 /* Glassmorphism utilities */
 .glass-panel {
-  @apply backdrop-blur-xl bg-base-100/40 border border-white/10 shadow-xl;
+  @apply backdrop-blur-xl bg-base-100/40 border border-white/10 shadow-xl shadow-base-content/5 rounded-3xl;
 }
 
 .glass-liquid {
-  @apply backdrop-blur-2xl bg-base-100/70 border border-white/20 shadow-inner scale-[0.98];
+  @apply backdrop-blur-2xl bg-base-100/70 border border-white/20 shadow-inner shadow-base-content/5 scale-[0.98] rounded-3xl;
 }
 
 /* Sleek custom scrollbar */

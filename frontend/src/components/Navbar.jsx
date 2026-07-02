@@ -11,36 +11,39 @@ const Navbar = () => {
           to="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight hover:opacity-80 transition-opacity"
         >
-          <div className="size-8 rounded-lg bg-primary/20 flex items-center justify-center">
-            <MessageSquare className="size-5 text-primary" />
+          <div className="size-10 rounded-2xl bg-primary/20 flex items-center justify-center">
+            <MessageSquare className="size-6 text-primary" />
           </div>
           Prism
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link
-            to={"/settings"}
-            className="btn btn-ghost btn-sm rounded-full gap-2"
-          >
-            <Settings className="size-4" />
-            <span className="hidden sm:inline">Settings</span>
-          </Link>
+          <div className="tooltip tooltip-bottom" data-tip="Settings">
+            <Link
+              to={"/settings"}
+              className="btn btn-ghost btn-circle"
+            >
+              <Settings className="size-6" />
+            </Link>
+          </div>
           {authUser && (
             <>
-              <Link
-                to={"/profile"}
-                className="btn btn-ghost btn-sm rounded-full gap-2"
-              >
-                <User className="size-4" />
-                <span className="hidden sm:inline">Profile</span>
-              </Link>
-              <button
-                onClick={logout}
-                className="btn btn-ghost btn-sm rounded-full gap-2 text-error hover:bg-error/20"
-              >
-                <LogOut className="size-4" />
-                <span className="hidden sm:inline">Logout</span>
-              </button>
+              <div className="tooltip tooltip-bottom" data-tip="Profile">
+                <Link
+                  to={"/profile"}
+                  className="btn btn-ghost btn-circle"
+                >
+                  <User className="size-6" />
+                </Link>
+              </div>
+              <div className="tooltip tooltip-bottom" data-tip="Logout">
+                <button
+                  onClick={logout}
+                  className="btn btn-ghost btn-circle text-error hover:bg-error/20"
+                >
+                  <LogOut className="size-6" />
+                </button>
+              </div>
             </>
           )}
         </div>

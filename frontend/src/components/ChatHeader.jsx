@@ -6,13 +6,13 @@ const ChatHeader = () => {
   const { selectedUser, setSelectedUser } = useChatStore();
   const { onlineUsers } = useAuthStore();
   return (
-    <div className="p-4 border-b border-base-content/10 flex justify-between items-center backdrop-blur-md bg-base-100/40 sticky top-0 z-10 shadow-sm">
+    <div className="p-4 border-b border-base-content/10 flex justify-between items-center backdrop-blur-md bg-base-100/40 sticky top-0 z-10 shadow-sm shadow-base-content/5">
       <div className="flex items-center gap-3">
         <div className="relative">
           <img
             src={selectedUser.profilePic || "/avatar.png"}
             alt={selectedUser.fullName}
-            className="size-10 object-cover rounded-full shadow-sm"
+            className="size-10 object-cover rounded-full shadow-sm shadow-base-content/10"
           />
           {onlineUsers.includes(selectedUser._id) && (
             <span

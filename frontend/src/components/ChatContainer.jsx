@@ -60,7 +60,7 @@ const ChatContainer = () => {
             className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
           >
             <div className="chat-image avatar">
-              <div className="size-10 rounded-full border border-base-content/10 shadow-sm">
+              <div className="size-10 rounded-full border border-base-content/10 shadow-sm shadow-base-content/10">
                 <img
                   src={
                     message.senderId === authUser._id
@@ -76,13 +76,13 @@ const ChatContainer = () => {
               </time>
             </div>
             <div
-              className={`chat-bubble flex flex-col shadow-sm ${message.senderId === authUser._id ? "bg-primary text-primary-content" : "glass-panel"}`}
+              className={`chat-bubble flex flex-col shadow-sm shadow-base-content/5 ${message.senderId === authUser._id ? "bg-primary text-primary-content" : "glass-panel"}`}
             >
               {message.image && (
                 <img
                   src={message.image}
                   alt="Attachment"
-                  className="sm:max-w-[200px] rounded-md mb-2 cursor-pointer hover:opacity-90 transition-opacity shadow-sm"
+                  className="sm:max-w-[200px] rounded-2xl mb-2 cursor-pointer hover:opacity-90 transition-opacity shadow-sm shadow-base-content/10"
                   onClick={() => setSelectedImage(message.image)}
                 />
               )}
@@ -106,10 +106,10 @@ const ChatContainer = () => {
             <img
               src={selectedImage}
               alt="Enlarged attachment"
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-[90vh] object-contain rounded-3xl shadow-2xl shadow-base-content/5"
             />
             <button
-              className="absolute top-4 right-4 md:-top-4 md:-right-4 btn btn-circle btn-sm btn-ghost bg-base-100/50 hover:bg-base-100/80 text-base-content shadow-sm"
+              className="absolute top-4 right-4 md:-top-4 md:-right-4 btn btn-circle btn-sm btn-ghost bg-base-100/50 hover:bg-base-100/80 text-base-content shadow-sm shadow-base-content/10"
               onClick={() => setSelectedImage(null)}
             >
               <X className="size-4" />

@@ -40,7 +40,7 @@ const Sidebar = () => {
             key={user._id}
             onClick={() => setSelectedUser(user)}
             className={`
-              w-full p-3 flex items-center gap-3 rounded-2xl transition-all duration-300 ease-out
+              w-full p-3 flex items-center gap-3 rounded-3xl transition-all duration-300 ease-out
               ${
                 selectedUser?._id === user._id
                   ? "glass-liquid text-primary-content"
@@ -52,7 +52,7 @@ const Sidebar = () => {
               <img
                 src={user.profilePic || "/avatar.png"}
                 alt={user.name}
-                className="size-12 object-cover rounded-full shadow-sm"
+                className="size-12 object-cover rounded-full shadow-sm shadow-base-content/10"
               />
               {onlineUsers.includes(user._id) && (
                 <span

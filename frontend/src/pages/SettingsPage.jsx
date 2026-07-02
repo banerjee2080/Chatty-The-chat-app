@@ -29,13 +29,13 @@ const SettingsPage = () => {
             <button
               key={t}
               className={`
-                group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors
+                group flex flex-col items-center gap-1.5 p-2 rounded-2xl transition-colors
                 ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
               `}
               onClick={() => setTheme(t)}
             >
               <div
-                className="relative h-8 w-full rounded-md overflow-hidden"
+                className="relative h-8 w-full rounded-xl overflow-hidden"
                 data-theme={t}
               >
                 <div className="absolute inset-0 grid grid-cols-4 gap-px p-1">
@@ -54,11 +54,11 @@ const SettingsPage = () => {
 
         {/* Preview Section */}
         <h3 className="text-lg font-semibold mb-3">Preview</h3>
-        <div className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
+        <div className="rounded-3xl border border-base-300 overflow-hidden bg-base-100 shadow-lg shadow-base-content/5">
           <div className="p-4 bg-base-200">
             <div className="max-w-lg mx-auto">
               {/* Mock Chat UI */}
-              <div className="bg-base-100 rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-base-100 rounded-3xl shadow-sm shadow-base-content/5 overflow-hidden">
                 {/* Chat Header */}
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ const SettingsPage = () => {
                     >
                       <div
                         className={`
-                          max-w-[80%] rounded-xl p-3 shadow-sm
+                          max-w-[80%] rounded-2xl p-3 shadow-sm shadow-base-content/5
                           ${message.isSent ? "bg-primary text-primary-content" : "bg-base-200"}
                         `}
                       >
@@ -104,12 +104,12 @@ const SettingsPage = () => {
                   <div className="flex gap-2">
                     <input
                       type="text"
-                      className="input input-bordered flex-1 text-sm h-10"
+                      className="input input-bordered flex-1 text-sm h-10 rounded-full"
                       placeholder="Type a message..."
                       value="This is a preview"
                       readOnly
                     />
-                    <button className="btn btn-primary h-10 min-h-0">
+                    <button className="btn btn-primary btn-circle h-10 min-h-0">
                       <Send size={18} />
                     </button>
                   </div>

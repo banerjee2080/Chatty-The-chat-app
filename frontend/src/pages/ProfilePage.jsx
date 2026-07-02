@@ -23,7 +23,7 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen pt-20 pb-10 flex items-center justify-center p-4">
       {/* Glassmorphic Container */}
-      <div className="w-full max-w-2xl glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
+      <div className="w-full max-w-2xl glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl shadow-base-content/5">
         
         {/* Subtle background glow effect */}
         <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
@@ -38,7 +38,7 @@ const ProfilePage = () => {
           {/* Avatar Upload Section */}
           <div className="flex flex-col items-center mb-10">
             <div className="relative group">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-base-100 shadow-xl relative z-10 transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-base-100 shadow-xl shadow-base-content/10 relative z-10 transition-transform duration-300 group-hover:scale-[1.02]">
                 <img
                   src={authUser.profilePic || selectedImage || "/avatar.png"}
                   alt="Profile picture"
@@ -76,8 +76,8 @@ const ProfilePage = () => {
           <div className="space-y-4">
             <h2 className="text-lg font-semibold mb-4 text-base-content/80">Account Details</h2>
             
-            <div className="bg-base-100/50 backdrop-blur-md rounded-2xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+            <div className="bg-base-100/50 backdrop-blur-md rounded-3xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
+              <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                 <User className="size-5" />
               </div>
               <div className="flex-1">
@@ -86,8 +86,8 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            <div className="bg-base-100/50 backdrop-blur-md rounded-2xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
-              <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+            <div className="bg-base-100/50 backdrop-blur-md rounded-3xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
+              <div className="w-10 h-10 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
                 <Mail className="size-5" />
               </div>
               <div className="flex-1">
@@ -96,15 +96,15 @@ const ProfilePage = () => {
               </div>
             </div>
             
-            <div className="bg-base-100/50 backdrop-blur-md rounded-2xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+            <div className="bg-base-100/50 backdrop-blur-md rounded-3xl p-4 border border-base-content/10 flex items-center gap-4 transition-all duration-300 hover:bg-base-100/70">
+              <div className="w-10 h-10 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
                 <Calendar className="size-5" />
               </div>
               <div className="flex-1">
                 <p className="text-xs text-base-content/50 uppercase font-semibold tracking-wider">Member Since</p>
                 <p className="text-sm font-medium mt-0.5">{authUser.createdAt?.split("T")[0] || "Unknown"}</p>
               </div>
-              <div className="badge badge-success badge-sm shadow-sm">Active</div>
+              <div className="badge badge-success badge-sm shadow-sm shadow-base-content/10">Active</div>
             </div>
           </div>
 
